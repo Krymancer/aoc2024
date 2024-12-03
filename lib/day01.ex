@@ -30,6 +30,7 @@ defmodule Day1 do
 
     frequency_map =
       Enum.reduce(right_list, %{}, fn num, acc ->
+        # &(&1 + 1) is a shorthand for fn prev_value -> prev_value + 1 end
         Map.update(acc, num, 1, &(&1 + 1))
       end)
 
